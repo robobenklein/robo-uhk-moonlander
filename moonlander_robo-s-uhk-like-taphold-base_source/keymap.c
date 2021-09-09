@@ -44,6 +44,17 @@
 #define BP_NDSH_MAC ALGR(KC_8)
 #define MOON_LED_LEVEL LED_LEVEL
 
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case TT(5):
+            return true;
+        case LT(1,KC_SPACE):
+            return true;
+        default:
+            return false;
+    }
+}
+
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
 };
