@@ -198,7 +198,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_0:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_C)SS_DELAY(10)  SS_TAP(X_O)SS_DELAY(10)  SS_TAP(X_N)SS_DELAY(10)  SS_TAP(X_F));
+      // original, oryx:
+      // SEND_STRING(SS_TAP(X_C)SS_DELAY(10)  SS_TAP(X_O)SS_DELAY(10)  SS_TAP(X_N)SS_DELAY(10)  SS_TAP(X_F));
+      SEND_STRING("curl -fsSL https://raw.githubusercontent.com/robobenklein/configs/master/provision.sh | bash");
     }
     break;
 
